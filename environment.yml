@@ -1,0 +1,11 @@
+name: opt-sampling
+channels:
+dependencies:
+  - python=3.11.*
+  - scipy
+  - numpy
+  - matplotlib
+  - pandas
+  - seaborn
+  - spyder
+  - dendropy
