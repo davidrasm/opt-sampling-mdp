@@ -17,6 +17,8 @@ Each MDP model contains high-level functions for optimizing sampling strategies 
 - a **q_value()** to compute expected value (q-value) of a given state-action pair under a policy
 - A **brute_force()** function to perform a brute force search over policy space to find an optimal policy through Monte Carlo simulations of the MDP.
 
+## Parameter estimation
+
 Likelihood functions are also provided for maximum likelihood parameter estimation:
 - **exp_coal_like.py** computes the likelihood of a tree under the exponential growth coalescent model of Kuhner et al. (Genetics, 1998)
 - **struct_coal_like.py** computes the likelihood of a tree under the approximations to the structured coalescent model in Volz (Genetics, 2012) and Müller et al. (MBE, 2017).
