@@ -1,0 +1,26 @@
+// Keywords: migration, dispersal
+
+initialize() {
+	initializeTreeSeq();
+	defineConstant("pop_size", ne); // ne
+	defineConstant("migration12", monetwo); // m12
+	defineConstant("migration21", mtwoone); // m21
+	defineConstant("num_generations", g); // g
+	initializeMutationRate(0);
+	initializeMutationType("m1", 0.5, "f", 0.0);
+	initializeGenomicElementType("g1", m1, 1.0);
+	initializeGenomicElement(g1, 0, 99999);
+	initializeRecombinationRate(0);
+}
+1 early() {	
+	sim.addSubpop("p1", pop_size); // external pop
+	sim.addSubpop("p2", pop_size); // focal pop
+	p1.setMigrationRates(p2, migration21); // migration into external (p1) from focal (p2) pop
+	p2.setMigrationRates(p1, migration12); // migration into focal (p2) from external (p1) pop
+}
+
+1: late() {
+   sim.treeSeqRememberIndividuals(sim.subpopulations.individuals);
+}
+
+num_generations late() { sim.treeSeqOutput("./two_pop_migration.trees"); }

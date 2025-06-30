@@ -1,12 +1,14 @@
 # Optimizing genomic sampling with MDPs
 
-For more information, please see the our manuscript:
+Project code for optimizing genomic sampling for demographic and epidemiological inference using a sequential decision making framework. Markov decision processes (MDPs) are used to compute the expected rewards in terms of information gained from sampling and optimal strategies are identified using dynamic programming based on the expected rewards. 
+
+For more information, please see our manuscript:
 
 Rasmussen et al. (2025) Optimizing genomic sampling for demographic and epidemiological inference with Markov decision processes. in prep.
 
-## Optimization code
+## MDP and optimization code
 
-Markov decision process (MDP) models are implemented for three common scenarios in population genomics and genomic epidemiology:
+MDPs are implemented for three common scenarios in population genomics and genomic epidemiology:
 - **exp_coal_mdp.py** implements the exponential growth coalescent MDP for optimizing sampling to estimate population growth rates. 
 - **ttd_mdp.py** implements the transmission tree distance MDP to minimize transmission distances between hosts in a transmission tree.
 - **struct_coal_mdp.py** implements the structured coalescent MDP to optimize sampling to estimate migration rates between sub-populations. 
@@ -23,7 +25,7 @@ Likelihood functions are also provided for maximum likelihood parameter estimati
 - **exp_coal_like.py** computes the likelihood of a tree under the exponential growth coalescent model of Kuhner et al. (Genetics, 1998)
 - **struct_coal_like.py** computes the likelihood of a tree under the approximations to the structured coalescent model in Volz (Genetics, 2012) and Müller et al. (MBE, 2017).
 
-Note: environment.yml can be used to create a conda or mamba environment with tskit and other required packages installed:
+Note: environment.yml can be used to create a conda or mamba environment with the required Python packages installed:
 ```
 $ conda env create -f environment.yml
 ```
